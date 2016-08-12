@@ -96,6 +96,7 @@ function _keys() {
   # this key is one way to add hhvm but it's block adds more mess, i.e; apache, mysql ... etc.
   apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0x5a16e7281be7a449 >>"${OUTTO}" 2>&1;
   apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db >>"${OUTTO}" 2>&1;
+  apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8 >>"${OUTTO}" 2>&1;
   curl -s http://dl.hhvm.com/conf/hhvm.gpg.key | apt-key add - > /dev/null 2>&1;
   curl -s http://nginx.org/keys/nginx_signing.key | apt-key add - > /dev/null 2>&1;
   echo "${OK}"
@@ -105,7 +106,7 @@ function _keys() {
 # package and repo addition (d) _add respo sources_
 function _repos() {
   cat >/etc/apt/sources.list.d/mariadb.list<<EOF
-deb http://mirrors.syringanetworks.net/mariadb/repo/10.2/ubuntu/ $(lsb_release -sc) main
+deb [arch=amd64,i386,ppc64el] http://ftp.utexas.edu/mariadb/repo/10.2/ubuntu $(lsb_release -sc) main'
 EOF
   cat >/etc/apt/sources.list.d/hhvm.list<<EOF
 deb http://dl.hhvm.com/ubuntu $(lsb_release -sc) main
