@@ -1,7 +1,7 @@
 HStacklet - A HHVM LEMP Stack Kit
 ==========
 
-| ![HStacklet - A HHVM LEMP Stack Kit](https://github.com/JMSDOnline/hstacklet/blob/master/images/hstacklet-lemp-kit.png "hstacklet") |
+| ![HStacklet - A HHVM LEMP Stack Kit](https://github.com/zachbrowne/hstacklet/blob/master/images/hstacklet-lemp-kit.png "hstacklet") |
 |---|
 | **HStacklet - A HHVM LEMP Stack Kit** |
 
@@ -11,9 +11,9 @@ HStacklet - A HHVM LEMP Stack Kit
 
 --------
 
-Kit to quickly install a [LEMP Stack](https://lemp.io) w/ HHVM and perform basic configurations of new Ubuntu 15.04 and 15.10 servers.
+Kit to quickly install a [LEMP Stack](https://lemp.io) w/ HHVM and perform basic configurations of new Ubuntu 15.04, 15.10 and 16.04 servers.
 
-Components include a recent mainline version of Nginx (1.9.9) using configurations from the HTML 5 Boilerplate team (_and modified/customized for use with mainline and HHVM_), HHVM v.3.11, and MariaDB 10.0 (drop-in replacement for MySQL), Sendmail (PHP mail function), and CSF (Config Server Firewall).
+Components include a recent mainline version of Nginx (1.9.9) using configurations from the HTML 5 Boilerplate team (_and modified/customized for use with mainline and HHVM_), HHVM v.3.11, and MariaDB 10.2 (drop-in replacement for MySQL), Sendmail (PHP mail function), and CSF (Config Server Firewall).
 
 Deploys a proper directory strucutre, optimizes Nginx to be used with HHVM, creates a PHP page for testing and more!
 
@@ -89,7 +89,7 @@ apt-get install -y curl
 ```
 ... then run our main installer ...
 ```
-curl -LO https://raw.github.com/JMSDOnline/hstacklet/master/hstacklet.sh
+curl -LO https://raw.github.com/zachbrowne/hstacklet/master/hstacklet.sh
 chmod +x hstacklet.sh
 ./hstacklet.sh
 ```
@@ -104,7 +104,7 @@ chmod +x hstacklet-backup-standalone.sh
 
 ### Additional Notes and honorable mentions
 
-HStacklet is a fork from my Varnish + Nginx project [VStacklet](https://github.com/JMSDOnline/vstacklet) modified for Nginx + HHVM - do enjoy!
+HStacklet is a fork from my Varnish + Nginx project [VStacklet](https://github.com/zachbrowne/vstacklet) modified for Nginx + HHVM - do enjoy!
 
 __A word to the wise__
 > At the moment HHVM, though it handles massive loads splendidly and considerably better than typical Zend OpCache, it is still under development. I suggest reviewing the [HHVM tests/passing lists](http://hhvm.com/blog/875/wow-hhvm-is-fast-too-bad-it-doesnt-run-my-code) before attempting to throw this up for hosting your particular CMS. I have several clients running Joomla! (up-to-date) sites and HHVM at the current moment does not play nice with them due to unit tests not currently running because of autoloading issues related to: [this](https://github.com/facebook/hiphop-php/pull/959).
